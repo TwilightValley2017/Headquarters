@@ -11,3 +11,13 @@ headquartersApp.get('/hello', (req, res) => {
 })
 
 headquartersApp.listen(PORT.HEADQUARTERS, () => console.log(`http://localhost:${PORT.HEADQUARTERS}`))
+
+const infantryTroopsApp = express()
+
+infantryTroopsApp.use(express.static(path.join(__dirname, 'dist')))
+
+infantryTroopsApp.get('/hello', (req, res) => {
+    res.send(`Infantry troops coming soon`)
+})
+
+infantryTroopsApp.listen(PORT.INFANTRY_TROOPS, () => console.log(`http://localhost:${PORT.INFANTRY_TROOPS}`))

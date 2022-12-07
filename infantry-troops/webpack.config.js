@@ -1,5 +1,6 @@
 const path = require('path')
 const { name: packageName } = require('./package.json')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './main.js',
@@ -7,5 +8,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: `${packageName}.bundle.js`,
     },
-    mode: 'development'
+    mode: 'development',
+    plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
 }

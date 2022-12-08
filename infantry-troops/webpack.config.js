@@ -6,7 +6,7 @@ module.exports = {
     entry: './main.js',
     output: {
         path: path.resolve('../', 'dist', packageName),
-        filename: 'js/[name].[hash].js',
+        filename: 'js/[name].[chunkhash].js',
     },
     mode: 'development',
     plugins: [

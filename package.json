@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "linting": "npx eslint --ext .js infantry-troops/src/**"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",

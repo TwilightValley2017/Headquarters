@@ -120,4 +120,4 @@ const observerPattern = function () {
   company.notify()
 }
 
-export { observerPattern, noPattern }
+export default { observerPattern, noPattern }

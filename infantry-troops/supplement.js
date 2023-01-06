@@ -1,0 +1,8 @@
+const ITEMS = {
+  SAMPLE: "SAMPLE",
+  NUT: "NUT",
+
+  OBSERVER_PUBSUB_PATTERN: "OBSERVER_PUBSUB_PATTERN",
+}
+
+export default ITEMS

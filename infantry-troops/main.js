@@ -1,19 +1,33 @@
-// import func from './src/sample/sample'
-import ObserverPubSubPattern from "./src/design-pattern/observer-pub-sub-pattern"
+import ITEMS from './supplement'
 
-import(/* webpackChunkName: "sample" */ "./src/sample/sample").then((sample) => {
-  sample()
-})
+window.addEventListener("load", () => {
+    const singleItem = ITEMS.NUT
+    switch (singleItem) {
+      case ITEMS.OBSERVER_PUBSUB_PATTERN:
+        import(/* webpackChunkName: "observer-pub-sub-pattern" */ "./src/design-pattern/observer-pub-sub-pattern")
+        .then(({ default: { noPattern, observerPattern, pubSubNoChannel, pubSubPattern, pubSubUseCase } }) => {
+          noPattern()
+          observerPattern()
+          pubSubNoChannel()
+          pubSubPattern()
+          pubSubUseCase()
+        })
+        break
 
-import(/* webpackChunkName: "nut" */ "./src/sample/nut").then((nut) => {
-  nut()
-})
+      case ITEMS.NUT:
+        import(/* webpackChunkName: "nut" */ "./src/sample/nut")
+        .then(({ default: tuesday }) => {
+          tuesday()
+        })
+        break
 
-window.addEventListener("load", () =>
-  console.log("Infantry troops coming soon...")
+      default:
+        import(/* webpackChunkName: "sample" */ "./src/sample/sample")
+        .then(({ default: monday }) => {
+          monday()
+        })
+        break
+    }
+  }
 )
-window.addEventListener("load", ObserverPubSubPattern.noPattern)
-window.addEventListener("load", ObserverPubSubPattern.observerPattern)
-window.addEventListener("load", ObserverPubSubPattern.pubSubNoChannel)
-window.addEventListener("load", ObserverPubSubPattern.pubSubPattern)
-window.addEventListener("load", ObserverPubSubPattern.pubSubUseCase)
+

@@ -3,6 +3,8 @@ const ITEMS = {
   NUT: "NUT",
 
   OBSERVER_PUBSUB_PATTERN: "OBSERVER_PUBSUB_PATTERN",
+
+  INPUT_TAG: 'INPUT_TAG',
 }
 
 export default ITEMS

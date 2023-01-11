@@ -1,7 +1,7 @@
 import ITEMS from './supplement'
 
 window.addEventListener("load", () => {
-    const singleItem = ITEMS.NUT
+    const singleItem = ITEMS.INPUT_TAG
     switch (singleItem) {
       case ITEMS.OBSERVER_PUBSUB_PATTERN:
         import(/* webpackChunkName: "observer-pub-sub-pattern" */ "./src/design-pattern/observer-pub-sub-pattern")
@@ -20,6 +20,14 @@ window.addEventListener("load", () => {
           tuesday()
         })
         break
+
+      case ITEMS.INPUT_TAG:
+        import(/* webpackChunkName: "input-tag" */ "./src/dom/input-tag")
+        .then(({ default: generateInput }) => {
+          generateInput()
+        })
+        break
+
 
       default:
         import(/* webpackChunkName: "sample" */ "./src/sample/sample")

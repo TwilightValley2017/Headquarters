@@ -208,13 +208,20 @@ const displayExpandedTeams = () => console.log({ expandedTeams })
 
 const displayCandidateMembers = () => console.log({ candidateMembers: candidateList })
 
-export default {
-  initSourceData,
-  expandTeam,
-  addAllMembers,
-  removeCandidateMember,
-  displayExpandedTeams,
-  displayCandidateMembers,
+export default () => {
+  initSourceData(10000)
+
+  addAllMembers('A0')
+  removeCandidateMember()
+
+  addAllMembers('Z25')
+  expandTeam('A0')
+
+  removeCandidateMember(false)
+  expandTeam('Z25')
+
+  displayExpandedTeams()
+  displayCandidateMembers()
 }
 
 /**

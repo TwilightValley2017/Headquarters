@@ -1,5 +1,3 @@
-const tuesday = () => {
+export default () => {
   console.log('Today is Tuesday')
 }
-
-export default tuesday

@@ -1,12 +1,16 @@
 const ITEMS = {
-  SAMPLE: "SAMPLE",
-  NUT: "NUT",
+  // sample
+  NUT: "sample/nut",
+  TRY_CATCH: "sample/try-catch.js",
 
-  OBSERVER_PUBSUB_PATTERN: "OBSERVER_PUBSUB_PATTERN",
+  // design pattern
+  OBSERVER_PUBSUB_PATTERN: "design-pattern/observer-pub-sub-pattern",
 
-  INPUT_TAG: 'INPUT_TAG',
+  // DOM
+  INPUT_TAG: "dom/input-tag",
 
-  SHUTTLE_BOX: "SHUTTLE_BOX",
+  // business scene
+  SHUTTLE_BOX: "biz-scene/shuttle-box",
 }
 
 export default ITEMS

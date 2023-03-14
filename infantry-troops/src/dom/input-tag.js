@@ -1,4 +1,4 @@
-const generateInput = () => {
+export default () => {
   // 创建元素
   const inputEl = document.createElement('input')
   inputEl.setAttribute('value', '')
@@ -20,4 +20,4 @@ const generateInput = () => {
   }, 1000)
 }
 
-export default generateInput
+

@@ -1,6 +1,7 @@
 const ITEMS = {
   // sample
   NUT: "sample/nut",
+  SAMPLE: "sample/sample",
   TRY_CATCH: "sample/try-catch.js",
 
   // design pattern
@@ -11,6 +12,9 @@ const ITEMS = {
 
   // business scene
   SHUTTLE_BOX: "biz-scene/shuttle-box",
+
+  // algorithm
+  BINARY_TREE: "algorithm/binary-tree"
 }
 
 export default ITEMS

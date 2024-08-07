@@ -1,0 +1,62 @@
+.container {
+  background-color: silver;
+}
+
+.banner {
+  height: 300px;
+}
+
+.banner h1 {
+  text-align: center;
+}
+
+.footer {
+  height: 900px;
+}
+
+.footer h1 {
+  text-align: center;
+}
+
+.feature-intro {
+  margin: 12px 0;
+  background-color: azure;
+  border-style: solid;
+  border-width: 1px;
+  border-color: silver;
+  border-radius: 5px;
+  position: sticky;
+}
+
+.feature-intro:nth-child(2) {
+  top: 0;
+}
+
+.feature-intro:nth-child(3) {
+  top: 50px;
+}
+
+.feature-intro:nth-child(4) {
+  top: 100px;
+}
+
+.feature-intro h3 {
+  text-align: center;
+}
+
+.feature-intro img {
+  width: 600px;
+  height: 400px;
+  float: left;
+}
+
+.feature-intro>div {
+  width: 60%;
+  float: left;
+}
+
+.feature-intro::after {
+  content: '';
+  clear: both;
+  display: block;
+}

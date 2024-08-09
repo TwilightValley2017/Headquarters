@@ -142,3 +142,93 @@
   clear: both;
   display: block;
 }
+
+.cert-container {
+  background-color: darkseagreen;
+  height: 1200px;
+  position: relative;
+  padding: 20px 0;
+}
+
+.cert-card {
+  /* basic style */
+  background-color: azure;
+  width: 1200px;
+  height: 600px;
+  margin: 12px 160px;
+  /* border style */
+  border-style: solid;
+  border-width: 1px;
+  border-color: silver;
+  border-radius: 25px;
+  box-shadow: -4px -4px 2px 1px silver;
+  /* sticky style */
+  position: sticky;
+  top: 20px;
+  /* transform */
+  transform: scale(0.7);
+  transform-origin: center top;
+  /* transition */
+  /* transition-property: transform;
+  transition-delay: .5s;
+  transition-duration: .5s; */
+  /* animation */
+  animation-name: certCardScale;
+  animation-duration: 1s;
+}
+
+.cert-card:hover {
+  transform: scale(0.7);
+}
+
+@keyframes certCardScale {
+  0% {
+    transform: scale(1);
+  }
+
+  /* 40% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0.8);
+  } */
+
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+.cert-card h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cert-card>div img {
+  width: 600px;
+  height: 400px;
+  float: left;
+}
+
+.cert-card>div p {
+  width: 50%;
+  float: left;
+}
+
+.cert-card>div::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+/*
+.invest {
+  margin-bottom:unset
+  scale:unset
+  transition: scale 0.5s ease-in-out;
+  scale:0.5
+  opacity:0.5
+  object-fit:scale-down
+
+  transition: 0.8s ease-in-out;
+  transition-property:scale, font-size, padding, line-height
+} */

@@ -3,7 +3,7 @@
 }
 
 .banner {
-  height: 300px;
+  height: 1200px;
 }
 
 .banner h1 {
@@ -18,44 +18,126 @@
   text-align: center;
 }
 
-.feature-intro {
-  margin: 12px 0;
+.product-container {
+  background-color: gainsboro;
+  height: 2800px;
+}
+
+.product-features {
+  position: relative;
+  padding-top: 20px;
+}
+
+.feature-card {
+  /* basic style */
   background-color: azure;
+  width: 1600px;
+  height: 800px;
+  margin: 12px 160px;
+  /* border style */
   border-style: solid;
   border-width: 1px;
   border-color: silver;
-  border-radius: 5px;
+  border-radius: 25px;
+  box-shadow: -4px -4px 2px 1px silver;
+  /* sticky style */
   position: sticky;
+  top: 20px;
+  /* timeline animation style */
+  view-timeline-name: --cardScale;
+  animation-timeline: --cardScale;
+  animation-fill-mode: both;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
 }
 
-.feature-intro:nth-child(2) {
-  top: 0;
+@keyframes scaleCard1st {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
 }
 
-.feature-intro:nth-child(3) {
-  top: 50px;
+@keyframes scaleCard2nd {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
 }
 
-.feature-intro:nth-child(4) {
-  top: 100px;
+/* no need scale style  */
+@keyframes scaleCard3rd {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
 }
 
-.feature-intro h3 {
+.feature-card:nth-child(1) {
+  /* sticky style */
+  translate: 0 0px;
+  /* timeline animation style */
+  animation-name: scaleCard1st;
+}
+
+.feature-card:nth-child(2) {
+  translate: 0 90px;
+  animation-name: scaleCard2nd;
+}
+
+.feature-card:nth-child(3) {
+  translate: 0 180px;
+}
+
+.feature-card h1 {
   text-align: center;
+  margin-bottom: 24px;
 }
 
-.feature-intro img {
+.feature-card>div img {
   width: 600px;
   height: 400px;
   float: left;
 }
 
-.feature-intro>div {
-  width: 60%;
+.feature-card>div p {
+  width: 50%;
   float: left;
 }
 
-.feature-intro::after {
+.feature-card>div::after {
   content: '';
   clear: both;
   display: block;

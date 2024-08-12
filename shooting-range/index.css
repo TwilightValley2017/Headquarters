@@ -169,11 +169,19 @@
   /* sticky style */
   position: sticky;
   top: 12px;
+  /* transform recovery */
+  transition-property: transform;
+  transition-delay: .5s;
+  transition-duration: .5s;
 }
 
 .cert-card h1 {
   text-align: center;
   margin-bottom: 24px;
+  /* transform recovery */
+  transition-property: transform;
+  transition-delay: .5s;
+  transition-duration: .5s;
 }
 
 .cert-card>div img {
@@ -194,23 +202,45 @@
 }
 
 .scale-90 {
-  /* transform */
   transform: scale(0.9);
-  transform-origin: center top;
-  /* transition */
-  transition-property: transform;
-  transition-delay: .5s;
-  transition-duration: .5s;
 }
 
 .scale-80 {
-  /* transform */
   transform: scale(0.8);
+}
+
+.scale-origin-center {
+  transform-origin: center;
+}
+
+.scale-origin-center-top {
   transform-origin: center top;
-  /* transition */
-  transition-property: transform;
-  transition-delay: .5s;
-  transition-duration: .5s;
+}
+
+.opacity-lowest {
+  opacity: 0.98;
+}
+
+.opacity-lower {
+  opacity: 0.96;
+}
+
+.opacity-middle {
+  opacity: 0.94;
+}
+
+.opacity-higher {
+  opacity: 0.92;
+}
+
+.opacity-highest {
+  opacity: 0.90;
+}
+
+.scale-transition {
+  transition-property: all;
+  /* transition-delay: .1s; */
+  transition-duration: .4s;
 }
 
 /*

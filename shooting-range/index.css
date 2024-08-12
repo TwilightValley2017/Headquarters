@@ -18,138 +18,10 @@
   text-align: center;
 }
 
-.product-container {
-  background-color: gainsboro;
-  height: 2800px;
-}
-
-.product-features {
-  position: relative;
-  padding-top: 20px;
-}
-
-/* 方案1 */
-
-.feature-card {
-  /* basic style */
-  background-color: azure;
-  width: 1600px;
-  height: 800px;
-  margin: 12px 160px;
-  /* border style */
-  border-style: solid;
-  border-width: 1px;
-  border-color: silver;
-  border-radius: 25px;
-  box-shadow: -4px -4px 2px 1px silver;
-  /* sticky style */
-  position: sticky;
-  top: 20px;
-  /* timeline animation style */
-  view-timeline-name: --cardScale;
-  animation-timeline: --cardScale;
-  animation-fill-mode: both;
-  animation-duration: 1ms; /* Firefox requires this to apply the animation */
-}
-
-@keyframes scaleCard1st {
-  0% {
-    transform: scale(1);
-  }
-
-  40% {
-    transform: scale(1);
-  }
-
-  60% {
-    transform: scale(0.9);
-  }
-
-  100% {
-    transform: scale(0.9);
-  }
-}
-
-@keyframes scaleCard2nd {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1);
-  }
-
-  70% {
-    transform: scale(0.95);
-  }
-
-  100% {
-    transform: scale(0.95);
-  }
-}
-
-/* no need scale style  */
-@keyframes scaleCard3rd {
-  0% {
-    transform: scale(1);
-  }
-
-  40% {
-    transform: scale(1);
-  }
-
-  70% {
-    transform: scale(0.9);
-  }
-
-  100% {
-    transform: scale(0.9);
-  }
-}
-
-.feature-card:nth-child(1) {
-  /* sticky style */
-  translate: 0 0px;
-  /* timeline animation style */
-  animation-name: scaleCard1st;
-}
-
-.feature-card:nth-child(2) {
-  translate: 0 90px;
-  animation-name: scaleCard2nd;
-}
-
-.feature-card:nth-child(3) {
-  translate: 0 180px;
-}
-
-.feature-card h1 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.feature-card>div img {
-  width: 600px;
-  height: 400px;
-  float: left;
-}
-
-.feature-card>div p {
-  width: 50%;
-  float: left;
-}
-
-.feature-card>div::after {
-  content: '';
-  clear: both;
-  display: block;
-}
-
-/* 方案2 */
-
 .cert-container {
   background-color: darkseagreen;
-  height: 2000px;
+  height: 2400px;
+  max-height: 2400px;
   position: relative;
   padding: 20px 0;
 }
@@ -164,24 +36,36 @@
   border-style: solid;
   border-width: 1px;
   border-color: silver;
-  border-radius: 25px;
-  box-shadow: -4px -4px 2px 1px silver;
+  border-radius: 15px;
+  box-shadow: -2px -2px 1px .5px silver;
   /* sticky style */
   position: sticky;
-  top: 12px;
+  top: 0;
   /* transform recovery */
-  transition-property: transform;
-  transition-delay: .5s;
-  transition-duration: .5s;
+  transition-property: all;
+  /* transition-delay: .5s; */
+  transition-duration: .4s;
+}
+
+.cert-card:nth-child(1) {
+  translate: 0;
+}
+
+.cert-card:nth-child(2) {
+  translate: 0 100px;
+}
+
+.cert-card:nth-child(3) {
+  translate: 0 200px;
 }
 
 .cert-card h1 {
   text-align: center;
   margin-bottom: 24px;
   /* transform recovery */
-  transition-property: transform;
-  transition-delay: .5s;
-  transition-duration: .5s;
+  transition-property: all;
+  /* transition-delay: .5s; */
+  transition-duration: .4s;
 }
 
 .cert-card>div img {
@@ -203,6 +87,10 @@
 
 .scale-90 {
   transform: scale(0.9);
+}
+
+.scale-85 {
+  transform: scale(0.85);
 }
 
 .scale-80 {
@@ -244,7 +132,7 @@
 }
 
 /*
-.invest {
+.reference {
   margin-bottom:unset
   scale:unset
   transition: scale 0.5s ease-in-out;

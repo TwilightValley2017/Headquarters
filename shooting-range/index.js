@@ -13,16 +13,6 @@ const options = {
   threshold: [0, 0.25, 0.35, 0.65, 0.75, 0.85, 0.95, 1],
 }
 
-// const certCard1 = new IntersectionObserver((entries) => {
-//   // 如果 intersectionRatio 为 0，则目标在视野外，
-//   // 我们不需要做任何事情。
-//   if (entries[0].intersectionRatio <= 0) {
-//     return
-//   }
-
-//   certCardTransformHandler1(entries[0])
-// }, options)
-
 const certCard2 = new IntersectionObserver((entries) => {
   // 如果 intersectionRatio 为 0，则目标在 viewport 外，我们不需要做任何事情。
   if (entries[0].intersectionRatio < 0) {
@@ -40,13 +30,6 @@ const certCard3 = new IntersectionObserver((entries) => {
 
   certCardIntersectionHandler3(entries[0])
 }, options)
-
-// const certCardTransformHandler1 = (e) => {
-//   if (e.intersectionRatio > 0.99) {
-//     e.target.classList.add('####')
-//     console.warn({ e, inter: e.intersectionRect, ratio: e.intersectionRatio })
-//   }
-// }
 
 const certCardIntersectionHandler2 = (e) => {
   const div = document.querySelector(".cert-card:nth-child(1)")
@@ -103,7 +86,7 @@ const certCardIntersectionHandler3 = (e) => {
   ,h1 = document.querySelector(".cert-card:nth-child(2) h1")
   ,scale90 = ['scale-90', 'scale-center-top', 'scale-transition', 'opacity-lower']
   // ,scale80 = ['scale-80', 'scale-center-top', 'scale-transition']
-  ,scale90h1 = ['scale-90', 'scale-center', 'scale-transition']
+  ,scale90h1 = ['scale-85', 'scale-center', 'scale-transition']
 
   // out-in
   if (e.intersectionRatio >= 0.3 && e.intersectionRatio < 0.4) {

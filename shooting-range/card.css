@@ -1,0 +1,95 @@
+.outer-container {
+  min-height: 2200px;
+  background-color: rgb(175, 197, 190);
+}
+
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* webkit */
+  justify-content: center; /* webkit */
+  align-items: center; /* webkit */
+}
+
+.card-container .card {
+  /* basic style */
+  background-color: azure;
+  width: 1200px;
+  height: 600px;
+  text-align: center;
+  margin: 24px 0;
+  /* border style */
+  border-style: solid;
+  border-width: 1px;
+  border-color: silver;
+  border-radius: 15px;
+  /* sticky style */
+  position: sticky;
+  top: 0;
+  /* transform recovery */
+  transition-property: all; /* webkit */
+  transition-duration: .4s; /* webkit */
+}
+
+.card-container .card .card-wrapper>div img {
+  width: 600px;
+  height: 400px;
+}
+
+.card-container .card .card-wrapper h1 {
+  text-align: center;
+
+  /* transform recovery */
+  transition-property: all;
+  transition-duration: .4s;
+}
+
+/* sticky and scale style */
+
+.card-container .card:nth-child(1) {
+  translate: 0 0;
+}
+
+.card-container .card:nth-child(2) {
+  translate: 0 100px;
+}
+
+.card-container .card:nth-child(3) {
+  translate: 0 200px;
+}
+
+.scale-90 {
+  transform: scale(0.9); /* webkit */
+  opacity: 0.98; /* webkit */
+}
+
+.scale-80 {
+  transform: scale(0.8);
+  opacity: 0.96;
+}
+
+.scale-origin-center {
+  transform-origin: center;
+}
+
+.scale-origin-center-top {
+  transform-origin: center top;
+}
+
+.scale-transition {
+  transition-property: all;
+  transition-duration: .4s;
+}
+
+/* basic style */
+.container {
+  background-color: silver;
+}
+
+.banner {
+  height: 1200px;
+}
+
+.footer {
+  height: 1600px;
+}

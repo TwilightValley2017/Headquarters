@@ -1,14 +1,17 @@
 .outer-container {
-  min-height: 2200px;
+  min-height: 3000px;
   background-color: rgb(175, 197, 190);
 }
 
 .card-container {
   position: relative;
   display: flex;
-  flex-direction: column; /* webkit */
-  justify-content: center; /* webkit */
-  align-items: center; /* webkit */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-flex-direction: column; /* webkit */
+  -webkit-justify-content: center; /* webkit */
+  -webkit-align-items: center; /* webkit */
 }
 
 .card-container .card {
@@ -23,12 +26,15 @@
   border-width: 1px;
   border-color: silver;
   border-radius: 15px;
+  -webkit-border-radius: 15px; /* webkit */
   /* sticky style */
   position: sticky;
   top: 0;
   /* transform recovery */
-  transition-property: all; /* webkit */
-  transition-duration: .4s; /* webkit */
+  transition-property: all;
+  transition-duration: .4s;
+  -webkit-transition-property: all; /* webkit */
+  -webkit-transition-duration: .4s; /* webkit */
 }
 
 .card-container .card .card-wrapper>div img {
@@ -42,6 +48,8 @@
   /* transform recovery */
   transition-property: all;
   transition-duration: .4s;
+  -webkit-transition-property: all; /* webkit */
+  -webkit-transition-duration: .4s; /* webkit */
 }
 
 /* sticky and scale style */
@@ -58,27 +66,46 @@
   translate: 0 200px;
 }
 
+.card-container .card:nth-child(4) {
+  translate: 0 300px;
+}
+
 .scale-90 {
-  transform: scale(0.9); /* webkit */
-  opacity: 0.98; /* webkit */
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9); /* webkit */
+  opacity: 1;
+  -webkit-opacity: 1; /* webkit */
 }
 
 .scale-80 {
   transform: scale(0.8);
-  opacity: 0.96;
+  -webkit-transform: scale(0.8); /* webkit */
+  opacity: 1;
+  -webkit-opacity: 1; /* webkit */
+}
+
+.scale-70 {
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7); /* webkit */
+  opacity: 1;
+  -webkit-opacity: 1; /* webkit */
 }
 
 .scale-origin-center {
   transform-origin: center;
+  -webkit-transform-origin: center top; /* webkit */
 }
 
 .scale-origin-center-top {
   transform-origin: center top;
+  -webkit-transform-origin: center top; /* webkit */
 }
 
 .scale-transition {
   transition-property: all;
   transition-duration: .4s;
+  -webkit-transition-property: all; /* webkit */
+  -webkit-transition-duration: .4s; /* webkit */
 }
 
 /* basic style */

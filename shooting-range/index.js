@@ -21,7 +21,7 @@ const card2 = new IntersectionObserver((entries) => {
     return
   }
 
-  insectionHandler2(entries[0])
+  intersectionHandler2(entries[0])
 }, options)
 
 const card3 = new IntersectionObserver((entries) => {
@@ -30,7 +30,7 @@ const card3 = new IntersectionObserver((entries) => {
     return
   }
 
-  insectionHandler3(entries[0])
+  intersectionHandler3(entries[0])
 }, options)
 
 const card4 = new IntersectionObserver((entries) => {
@@ -39,7 +39,7 @@ const card4 = new IntersectionObserver((entries) => {
     return
   }
 
-  insectionHandler4(entries[0])
+  intersectionHandler4(entries[0])
 }, options)
 
 /**
@@ -73,14 +73,16 @@ const card4 = new IntersectionObserver((entries) => {
  * 清除样式：ratio === 0 && top > 0 && bottom > 0
  */
 
-let tempRatio = -1
+let tempRatio2 = -1
+,tempRatio3 = -1
+,tempRatio4 = -1
 const scaleBasicStyle1 = ['scale-origin-center-top', 'scale-transition']
 ,scaleBasicStyle2 = ['scale-origin-center', 'scale-transition']
 const scale90 = 'scale-90'
 ,scale80 = 'scale-80'
 ,scale70 = 'scale-70'
 
-// const insectionHandler = (e) => {
+// const intersectionHandler = (e) => {
 //   // 获取操作元素
 //   const div = document.querySelector('')
 //   const title = document.querySelector('')
@@ -144,20 +146,21 @@ const scale90 = 'scale-90'
 
 // }
 
-const insectionHandler2 = (e) => {
+const intersectionHandler2 = (e) => {
   // 获取操作元素
   const div = document.querySelector('.card:nth-child(1)')
   const title = document.querySelector('.card:nth-child(1) h1')
 
   // 获取元素交叉监听数据
-  const ratio = e.intersectionRatio
+  let ratio = e.intersectionRatio
+  ratio > 0.99 ? Math.round(ratio) : ratio
   const { top, bottom } = e.boundingClientRect
 
   /**
    * 动作1：从 viewport 底部滚入，out-in
    * 变换：上一卡片缩小
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio2) {
     if (!div.classList.contains(scaleBasicStyle1)) {
       div.classList.add(scaleBasicStyle1)
     }
@@ -176,7 +179,7 @@ const insectionHandler2 = (e) => {
       div.classList.add(scale80)
     }
 
-    if (ratio > 0.7 && ratio <= 0.9) {
+    if (ratio > 0.7 && ratio < 1) {
       // scale 0.7
       div.classList.add(scale70)
       title.classList.add(scale70)
@@ -187,7 +190,7 @@ const insectionHandler2 = (e) => {
    * 动作4: 从 viewport 底部滚出，in-out
    * 变换：上一卡片恢复
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio2) {
     if (ratio > 0.7 && ratio <= 0.9) {
       // 移除 scale 0.7
       div.classList.remove(scale70)
@@ -215,10 +218,10 @@ const insectionHandler2 = (e) => {
   }
 
   // 存储
-  tempRatio = ratio
+  tempRatio2 = ratio
 }
 
-const insectionHandler3 = (e) => {
+const intersectionHandler3 = (e) => {
   // 获取操作元素
   const div = document.querySelector('.card:nth-child(2)')
   const title = document.querySelector('.card:nth-child(2) h1')
@@ -231,7 +234,7 @@ const insectionHandler3 = (e) => {
    * 动作1：从 viewport 底部滚入，out-in
    * 变换：上一卡片缩小
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio3) {
     if (!div.classList.contains(scaleBasicStyle1)) {
       div.classList.add(scaleBasicStyle1)
     }
@@ -256,7 +259,7 @@ const insectionHandler3 = (e) => {
    * 动作4: 从 viewport 底部滚出，in-out
    * 变换：上一卡片恢复
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio3) {
     if (ratio > 0.4 && ratio <= 0.7) {
       // 移除 scale 0.8
       div.classList.remove(scale80)
@@ -279,23 +282,24 @@ const insectionHandler3 = (e) => {
   }
 
   // 存储
-  tempRatio = ratio
+  tempRatio3 = Math.round(ratio)
 }
 
-const insectionHandler4 = (e) => {
+const intersectionHandler4 = (e) => {
   // 获取操作元素
   const div = document.querySelector('.card:nth-child(3)')
   const title = document.querySelector('.card:nth-child(3) h1')
 
   // 获取元素交叉监听数据
-  const ratio = e.intersectionRatio
+  let ratio = e.intersectionRatio
+  ratio > 0.99 ? Math.round(ratio) : ratio
   const { top, bottom } = e.boundingClientRect
 
   /**
    * 动作1：从 viewport 底部滚入，out-in
    * 变换：上一卡片缩小
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio > tempRatio4) {
     if (!div.classList.contains(scaleBasicStyle1)) {
       div.classList.add(scaleBasicStyle1)
     }
@@ -315,7 +319,7 @@ const insectionHandler4 = (e) => {
    * 动作4: 从 viewport 底部滚出，in-out
    * 变换：上一卡片恢复
    */
-  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio) {
+  if (ratio > 0 && ratio < 1 && top > 0 && bottom > 0 && ratio < tempRatio4) {
     if (ratio > 0.2 && ratio <= 0.7) {
       // 移除 scale 0.9
       div.classList.remove(scale90)
@@ -333,5 +337,5 @@ const insectionHandler4 = (e) => {
   }
 
   // 存储
-  tempRatio = ratio
+  tempRatio4 = Math.round(ratio)
 }
